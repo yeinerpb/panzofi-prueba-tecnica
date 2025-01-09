@@ -2,6 +2,8 @@
 
 UserAnalyticsApp es una aplicación web construida con Django Rest Framework para el backend y React para el frontend. Proporciona análisis e información de usuarios.
 
+## Esta configurado para una base de datos postgresql
+
 ## Descripción del Proyecto
 
 Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. El backend está impulsado por Django Rest Framework, proporcionando una API robusta, mientras que el frontend está construido con React, ofreciendo una interfaz de usuario dinámica y receptiva.
