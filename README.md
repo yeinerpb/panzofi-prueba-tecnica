@@ -12,7 +12,7 @@ Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. E
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/yourusername/UserAnalyticsApp.git
+    git clone https://github.com/yeinerpb/panzofi-prueba-tecnica.git
     cd UserAnalyticsApp
     ```
 
