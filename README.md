@@ -6,7 +6,17 @@ UserAnalyticsApp es una aplicación web construida con Django Rest Framework par
 
 Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. El backend está impulsado por Django Rest Framework, proporcionando una API robusta, mientras que el frontend está construido con React, ofreciendo una interfaz de usuario dinámica y receptiva.
 
+---
+
 ## Instalación
+
+### Requisitos previos
+
+- **Python** (versión 3.8 o superior)
+- **Node.js** (versión 16 o superior)
+- **PostgreSQL** (instalado y configurado)
+
+---
 
 ### Backend
 
@@ -16,7 +26,7 @@ Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. E
     cd UserAnalyticsApp
     ```
 
-2. Accede a la carpeta backend y crea un entorno virtual y actívalo:
+2. Accede a la carpeta backend, crea un entorno virtual y actívalo:
     ```bash
     cd backend
     python -m venv venv
@@ -28,15 +38,45 @@ Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. E
     pip install -r requirements.txt
     ```
 
-4. Aplica las migraciones:
+4. Configura las variables de entorno en el archivo `.env`.
+
+5. Restaura la base de datos desde el archivo de respaldo:
+    ```bash
+    pg_restore -U <tu_usuario> -d <nombre_de_la_base_de_datos> backend/backup_panzofi.backup
+    ```
+
+## Restaurar la base de datos
+
+El archivo de respaldo de la base de datos **`backup_panzofi.backup`** está ubicado en la carpeta `backend`.
+
+### Pasos para restaurar:
+
+1. Asegúrate de tener PostgreSQL instalado y configurado.
+2. Crea una nueva base de datos en PostgreSQL con el nombre que aparece en el archivo `.env` (variable `DB_NAME`).
+3. Restaura la base de datos ejecutando:
+    ```bash
+    pg_restore -U <tu_usuario> -d <nombre_de_la_base_de_datos> backend/backup_panzofi.backup
+    ```
+4. Alternativamente, puedes usar **pgAdmin**:
+   - Abre pgAdmin y selecciona tu servidor conectado.
+   - Crea una nueva base de datos o selecciona una existente.
+   - Haz clic derecho en la base de datos y selecciona **"Restore..."**.
+   - En el campo **Filename**, selecciona `backend/backup_panzofi.backup`.
+   - Haz clic en **Restore**.
+
+---
+
+6. Aplica las migraciones:
     ```bash
     python manage.py migrate
     ```
 
-5. Ejecuta el servidor de desarrollo:
+7. Ejecuta el servidor de desarrollo:
     ```bash
     python manage.py runserver
     ```
+
+---
 
 ### Frontend
 
@@ -52,10 +92,21 @@ Esta aplicación permite a los usuarios rastrear y analizar datos de usuarios. E
 
 3. Inicia el servidor de desarrollo:
     ```bash
-    npm start
+    npm run dev
     ```
+
+---
 
 ## Uso
 
 1. Abre tu navegador web y ve a `http://localhost:5173` para acceder al frontend de React.
 2. La API del backend se puede acceder en `http://localhost:8000/api/`.
+
+---
+
+## Notas adicionales
+
+- Para asegurar la compatibilidad, las versiones de Python, Node.js, y PostgreSQL deben coincidir con las utilizadas durante el desarrollo.
+- En caso de problemas, revisa el archivo `.env` para confirmar que las variables de entorno están correctamente configuradas.
+
+---
