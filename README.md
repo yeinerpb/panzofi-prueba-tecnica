@@ -110,5 +110,7 @@ El archivo de respaldo de la base de datos **`backup_panzofi.backup`** está ubi
 
 - Para asegurar la compatibilidad, las versiones de Python, Node.js, y PostgreSQL deben coincidir con las utilizadas durante el desarrollo.
 - En caso de problemas, revisa el archivo `.env` para confirmar que las variables de entorno están correctamente configuradas.
+- El usuario admin es: admin1  y su contraseña: password1
+- Los usuarios regulares son: user1 = password1, user2 = password2, user3 = password3 y en esa misma secuencia para los demas usuarios
 
 ---
